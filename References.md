@@ -1,5 +1,4 @@
 ## Reference Links
-## Reference Links
 1. <a href="https://kubernetes.io/docs/home/" target="_blank">Kubernetes Documentation</a>
 2. <a href="https://kubernetes.io/training/" target="_blank">Certifications</a>
 3. <a href="https://kubernetes.io/docs/reference/kubectl/quick-reference/" target="_blank">kubectl Cheat Sheet</a>
