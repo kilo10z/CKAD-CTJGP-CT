@@ -25,7 +25,7 @@ kubectl apply -f pod1.yaml
 Check where the pod has been placed. You will see it is placed on the Node whose name you gave in the yaml file
 ```
 kubectl get po -o wide
-
+```
 Now let edit the yaml file again, to specify a node that doesn't exist in the cluster
 ```
 vi pod1.yaml
