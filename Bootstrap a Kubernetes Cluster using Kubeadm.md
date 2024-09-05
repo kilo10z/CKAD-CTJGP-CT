@@ -19,6 +19,9 @@ To begin, log in to AWS Console.
 
 
 * Add the below code in Advanced Details -> User data - optional.
+<details><summary>show</summary>
+<p>
+
 ```
 #!/bin/bash
 #
@@ -104,6 +107,8 @@ cat > /etc/default/kubelet << EOF
 KUBELET_EXTRA_ARGS=--node-ip=$local_ip
 EOF
 ```
+</p>
+</details>
 
 * Launch the Instance.
 
