@@ -1,6 +1,34 @@
 ## Pod Scheduling
 
 ### Task 1: Pod Scheduling using Node Name
+Check the label on the nodes
+```
+kubectl get nodes --show-labels
+```
+Create a pod yaml file
+```
+kubectl run pod1 --image nginx --dry-run=client -o yaml> pod1.yaml
+```
+```
+vi pod1.yaml
+```
+Add the below under spec:
+```
+nodeName: mehar-node1
+```
+```
+Apply the yaml file
+kubectl apply -f pod1.yaml
+```
+Check where the pod has been placed. You will see it is placed on the Node whose name you gave in the yaml file
+```
+kubectl get po -o wide
+```
+vi pod1.yaml 
+kubectl replace -f pod1.yaml --force
+kubectl get po -o wide
+kubectl describe po pod1
+ 
 
 
 ### Task 2: Pod Scheduling using Node labels
