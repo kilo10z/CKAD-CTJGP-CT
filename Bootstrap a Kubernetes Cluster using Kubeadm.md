@@ -108,7 +108,7 @@ EOF
 * Launch the Instance.
 
 ### Task-2: Setting up Machines
-* Task 2 can be skipped if the user data has been updated as shown in Task 1
+* `Task 2 can be skipped if the user data has been updated as shown in Task 1`
 * All steps in this task are to be performed on all the machines
 * Connect all VMs with putty.
 Switch to root.
