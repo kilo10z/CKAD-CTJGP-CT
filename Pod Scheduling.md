@@ -17,7 +17,7 @@ Add the below under spec:
 ```
 nodeName: node1
 ```
-```
+
 Apply the yaml file
 ```
 kubectl apply -f pod1.yaml
