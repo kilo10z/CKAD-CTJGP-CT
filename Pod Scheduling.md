@@ -1,6 +1,9 @@
 ## Pod Scheduling
 
-### Task 1: Pod Scheduling using Node labels
+### Task 1: Pod Scheduling using Node Name
+
+
+### Task 2: Pod Scheduling using Node labels
 
 Node Labels: Like many other Kubernetes objects, nodes have labels. You can attach labels manually. Kubernetes also populates a standard set of labels on all nodes in a cluster.
 
@@ -67,7 +70,7 @@ kubectl label nodes node1 disk type-
 ```
 
 
-### Task 2: Pod Scheduling using Node Name / Host Name
+### Task 3: Pod Scheduling using Node Name / Host Name
 
 Node Name is a more direct form of node selection than affinity or nodeSelector. nodeName is a field in the Pod spec. If the nodeName field is not empty, the scheduler ignores the Pod and the kubelet on the named node tries to place the Pod on that node. Using nodeName overrules using nodeSelector or affinity and anti-affinity rules.
 
@@ -101,7 +104,7 @@ Check your pod is running on the targeted node
 kubectl get pods -o wide 
 ```
 
-### Task 3: Pod Scheduling using Node Affinity 
+### Task 4: Pod Scheduling using Node Affinity 
 
 Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node label
 
@@ -199,7 +202,7 @@ Verify that the pod is running on your chosen node:
 kubectl get pods --output=wide
 ```
 
-### Task 4: Pod Scheduling using Pod Affinity
+### Task 5: Pod Scheduling using Pod Affinity
 
 ```
 vi depend-pod.yaml
@@ -297,7 +300,7 @@ kubectl get pod -o wide
 ```
 
 
-### Task 5: Pod Scheduling using Taints and Tolerations
+### Task 6: Pod Scheduling using Taints and Tolerations
 
 Node affinity is a property of Pods that attracts them to a set of nodes (either as a preference or a hard requirement). Taints are the opposite -- they allow a node to repel a set of pods.
 
