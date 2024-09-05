@@ -14,7 +14,8 @@
 
 ## Table Of Contents
 * [Lab-1: Bootstrap a Kubernetes Cluster using Kubeadm](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Bootstrap%20a%20Kubernetes%20Cluster%20using%20Kubeadm.md)
-* [Lab-2: Jobs and Cronjobs](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Jobs%20and%20Cronjobs.md)
+* [Lab-2: Pod Scheduling](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Pod%20Scheduling.md)
+* [Lab-3: Jobs and Cronjobs](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Jobs%20and%20Cronjobs.md)
 
 * [References](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/References.md)
 
