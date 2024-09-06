@@ -26,7 +26,7 @@ Check where the pod has been placed. You will see it is placed on the Node whose
 ```
 kubectl get po -o wide
 ```
-Now let edit the yaml file again, to specify a node that doesn't exist in the cluster
+Now let's edit the yaml file again, to specify a node that doesn't exist in the cluster
 ```
 vi pod1.yaml
 ```
@@ -38,7 +38,7 @@ Exit and replace the pod
 ```
 kubectl replace -f pod1.yaml --force
 ```
-You will see that the pod has gone in the penidng state as there is no node with the name `node-xyz`
+You will see that the pod has gone in the pending state as there is no node with the name `node-xyz`
 ```
 kubectl get po -o wide
 ```
