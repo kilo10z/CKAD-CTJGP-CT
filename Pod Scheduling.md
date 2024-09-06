@@ -1,6 +1,14 @@
 ## Pod Scheduling
 
 ### Task 1: Pod Scheduling using Node Name
+Node Name is a more direct form of node selection than affinity or nodeSelector. nodeName is a field in the Pod spec. If the nodeName field is not empty, the scheduler ignores the Pod and the kubelet on the named node tries to place the Pod on that node. Using nodeName overrules using nodeSelector or affinity and anti-affinity rules.
+
+Some of the limitations of using nodeName to select nodes are:
+
+* If the named node does not exist, the Pod will not run, and in some cases may be automatically deleted.
+* If the named node does not have the resources to accommodate the Pod, the Pod will fail and its reason will indicate why, for example OutOfmemory or OutOfcpu.
+* Node names in cloud environments are not always predictable or stable.
+  
 Check the label on the nodes
 ```
 kubectl get nodes --show-labels
@@ -110,41 +118,7 @@ kubectl label nodes node1 disk type-
 ```
 
 
-### Task 3: Pod Scheduling using Node Name / Host Name
-
-Node Name is a more direct form of node selection than affinity or nodeSelector. nodeName is a field in the Pod spec. If the nodeName field is not empty, the scheduler ignores the Pod and the kubelet on the named node tries to place the Pod on that node. Using nodeName overrules using nodeSelector or affinity and anti-affinity rules.
-
-Some of the limitations of using nodeName to select nodes are:
-
-* If the named node does not exist, the Pod will not run, and in some cases may be automatically deleted.
-* If the named node does not have the resources to accommodate the Pod, the Pod will fail and its reason will indicate why, for example OutOfmemory or OutOfcpu.
-* Node names in cloud environments are not always predictable or stable.
-
-```
-vi node-name.yaml
-```
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx-nodename
-  labels:
-    env: test
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-  nodeName: {node-name / hostname }
-```
-```
-kubectl apply -f node-name.yaml
-```
-Check your pod is running on the targeted node
-```
-kubectl get pods -o wide 
-```
-
-### Task 4: Pod Scheduling using Node Affinity 
+### Task 3: Pod Scheduling using Node Affinity 
 
 Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node label
 
@@ -242,7 +216,7 @@ Verify that the pod is running on your chosen node:
 kubectl get pods --output=wide
 ```
 
-### Task 5: Pod Scheduling using Pod Affinity
+### Task 4: Pod Scheduling using Pod Affinity
 
 ```
 vi depend-pod.yaml
@@ -340,7 +314,7 @@ kubectl get pod -o wide
 ```
 
 
-### Task 6: Pod Scheduling using Taints and Tolerations
+### Task 5: Pod Scheduling using Taints and Tolerations
 
 Node affinity is a property of Pods that attracts them to a set of nodes (either as a preference or a hard requirement). Taints are the opposite -- they allow a node to repel a set of pods.
 
