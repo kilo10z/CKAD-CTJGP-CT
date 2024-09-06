@@ -1,5 +1,13 @@
 ## Pod Scheduling
 
+Here's a concise list of pod scheduling methods with brief descriptions:
+* Node Name: Schedules pods to specific nodes based on their names.
+* Node Selectors: Constrains pod scheduling to nodes with specific labels.
+* Node Affinity: Directs pod scheduling based on node labels. (Note: Kubernetes does not have a direct nodeAntiAffinity term. Instead, node anti-affinity is achieved through nodeAffinity with nodeSelectorTerms to exclude or include specific nodes.)
+* Pod Affinity and Pod Anti-Affinity: Manages pod placement based on the presence or absence of other specified pods on the same node.
+* Taints and Tolerations: Regulates pod scheduling on nodes with particular taints.
+
+
 ### Task 1: Pod Scheduling using Node Name
 Node Name is a more direct form of node selection than affinity or nodeSelector. nodeName is a field in the Pod spec. If the nodeName field is not empty, the scheduler ignores the Pod and the kubelet on the named node tries to place the Pod on that node. Using nodeName overrules using nodeSelector or affinity and anti-affinity rules.
 
@@ -122,8 +130,6 @@ kubectl label nodes node1 disktype-
 
 Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node label.
 
-`Note: In Kubernetes, there is no direct nodeAntiAffinity term. Instead, node anti-affinity is achieved using nodeAffinity with nodeSelectorTerms to specify nodes that should be avoided or included`
-
 List the nodes in your cluster, along with their labels:
 ```
 kubectl get nodes --show-labels
@@ -218,7 +224,7 @@ Verify that the pod is running on your chosen node:
 kubectl get pods --output=wide
 ```
 
-### Task 4: Pod Scheduling using Pod Affinity
+### Task 4: Pod Scheduling using Pod Affinity and Anti Affinity
 `Note: Kubernetes provides podAntiAffinity to control how pods are scheduled relative to other pods`
 ```
 vi depend-pod.yaml
