@@ -120,7 +120,9 @@ kubectl label nodes node1 disktype-
 
 ### Task 3: Pod Scheduling using Node Affinity 
 
-Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node label
+Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node label.
+
+`Note: In Kubernetes, there is no direct nodeAntiAffinity term. Instead, node anti-affinity is achieved using nodeAffinity with nodeSelectorTerms to specify nodes that should be avoided or included`
 
 List the nodes in your cluster, along with their labels:
 ```
