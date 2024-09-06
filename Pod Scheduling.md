@@ -219,7 +219,7 @@ kubectl get pods --output=wide
 ```
 
 ### Task 4: Pod Scheduling using Pod Affinity
-
+`Note: Kubernetes provides podAntiAffinity to control how pods are scheduled relative to other pods`
 ```
 vi depend-pod.yaml
 ```
