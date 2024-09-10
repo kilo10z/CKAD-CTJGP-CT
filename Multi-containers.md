@@ -84,6 +84,11 @@ Replace the pod
 kubectl replace -f init-pod.yaml
 ```
 ```
+kubectl get po
+```
+![image](https://github.com/user-attachments/assets/c4e03832-1907-48ad-b1eb-990ad8389fd2)
+
+```
 kubectl exec -it init-pod -c main-container
 ```
 ```
