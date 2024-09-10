@@ -101,4 +101,7 @@ cd /app && ls
 ```
 cat completed.txt
 ```
+```
+exit
+```
 
