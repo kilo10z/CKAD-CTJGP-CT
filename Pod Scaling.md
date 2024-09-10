@@ -51,10 +51,11 @@ To decrease the numebr of repliacs, we again can do it by the imperative method 
 
 
 ### Task 2: Horizantal Pod Autoscaler(HPA)
-
- kubectl get hpa
+Now lets set up HPA
+```
  kubectl autoscale deploy dep1 --min 4 --max 6 --cpu-percent 70
+```
+```
  kubectl get hpa
- kubectl get po -o wide
- kubectl describe deployments.apps dep1 
- kubectl describe hpa dep1 
+```
+![image](https://github.com/user-attachments/assets/d239c5e9-a27e-4f3f-908f-d9a41ce0f456)
