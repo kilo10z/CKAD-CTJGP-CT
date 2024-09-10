@@ -84,7 +84,7 @@ command: ['sh', '-c', 'sleep 60 && echo "Init Container Completed" > /work-dir/c
 ```
 Replace the pod
 ```
-kubectl replace -f init-pod.yaml
+kubectl replace -f init-pod.yaml --force
 ```
 ```
 kubectl get po
