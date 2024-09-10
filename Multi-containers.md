@@ -86,7 +86,8 @@ kubectl replace -f init-pod.yaml
 ```
 kubectl get po
 ```
-![image](https://github.com/user-attachments/assets/c4e03832-1907-48ad-b1eb-990ad8389fd2)
+Notice the PodInitializing status coming up only after a lapse of 60 seconds 
+![image](https://github.com/user-attachments/assets/445d7c73-9766-46a7-be43-c7f8e9ad2ebb)
 
 ```
 kubectl exec -it init-pod -c main-container
