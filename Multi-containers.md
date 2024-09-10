@@ -93,7 +93,7 @@ Notice the PodInitializing status coming up only after a lapse of 60 seconds
 ![image](https://github.com/user-attachments/assets/445d7c73-9766-46a7-be43-c7f8e9ad2ebb)
 
 ```
-kubectl exec -it init-pod -c main-container
+kubectl exec -it init-pod -c main-container -- bash
 ```
 ```
 cd /app && ls
