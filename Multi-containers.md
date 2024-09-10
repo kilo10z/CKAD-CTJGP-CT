@@ -80,7 +80,7 @@ kubectl get pod
 
 Go and update the command for the init container to write the file after a lapse of 60 seconds. You would notice the main container starting only after init container has completed its task
 ```
-command: ['sh', '-c', 'sleep 10 && echo "Init Container Completed" > /work-dir/completed.txt']
+command: ['sh', '-c', 'sleep 60 && echo "Init Container Completed" > /work-dir/completed.txt']
 ```
 Replace the pod
 ```
