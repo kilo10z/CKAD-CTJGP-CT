@@ -17,7 +17,8 @@
 * [Lab-2: Pod Scheduling](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Pod%20Scheduling.md)
 * [Lab-3: Jobs and Cronjobs](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Jobs%20and%20Cronjobs.md)
 * [Lab-4: Multi Containers](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Multi-containers.md)
-* [Lab-5: Deployment Strategy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Deployment%20Strategy.md)
+* [Lab-5: Pod Scaling](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Pod%20Scaling.md)
+* [Lab-6: Deployment Strategy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Deployment%20Strategy.md)
 
 * [References](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/References.md)
 
