@@ -41,11 +41,28 @@ Set a new image for the deployment
 kubectl set image deploy dep2 nginx=nginx:latest --record
 ```
 Check how the pods are getting deleted and recreated. 
+![image](https://github.com/user-attachments/assets/c59a35cd-0e63-44b9-8edc-6265816e53b7)
+
+Check the rollout history
+```
+kubectl rollout history depoyment dep2
+```
+![image](https://github.com/user-attachments/assets/3c430837-2857-405b-b50d-c6435caeb5ae)
 
 Cross check if the image has been updated by executing the below command
 ```
 kubectl describe deployments.apps dep2
 ```
+Now lets rollback
+```
+kubectl rollout undo deployment dep2
+```
+Check the history
+```
+kubectl rollout history deployment dep2
+```
+![image](https://github.com/user-attachments/assets/09fc3241-efe9-40f7-b6ee-bfc65c4aad30)
+
 
 
 ### Task 2: Rolling Update in Kubernetes 
