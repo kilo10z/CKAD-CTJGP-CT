@@ -178,11 +178,10 @@ spec:
 kubectl apply -f web-blue.yaml
 ```
 ```
-kubectl get deploy
+kubectl get deploy,po
 ```
-```
-kubectl get pods
-```
+![image](https://github.com/user-attachments/assets/b446a369-5fed-4672-ae2a-7212ccbed87b)
+
 
 Now create NodePort service to access application
 ```		 
@@ -208,16 +207,12 @@ spec:
 kubectl apply -f svc-web.yaml
 ```
 ```
-kubectl get svc
+kubectl get svc,ep
 ```
-```
-kubectl get po -o wide
-```
-Check the endpoints
-```
-kubectl get ep svc svc-web
-```
+![image](https://github.com/user-attachments/assets/b3dd924e-7d2c-451b-9085-e084717e305b)
+
 Access you application
+![image](https://github.com/user-attachments/assets/f85d13a8-788f-4454-8b29-4e61a9ab9225)
 
 Create another deployment (Green)
 ```
@@ -251,28 +246,22 @@ spec:
 kubectl apply -f web-green.yaml
 ```
 ```
-kubectl get deployment
+kubectl get deployment,po
 ```
-```
-kubectl get pods
-```
+![image](https://github.com/user-attachments/assets/4d5ed7ed-52c5-4324-9cac-8dfb8dc8c9c7)
+
+
 Access this application using same service that we created previously, by changing the selector in the Service yaml file.
 
 Replace Selector `web-blue` by `web-green`
 ```	 
-kubectl apply -f svc-web.yaml
+kubectl replace -f svc-web.yaml --force
 ```
-```
-kubectl get svc
-```
-```
-kubectl get po -o wide
-```
-Check the endpoints
-```
-kubectl get ep svc svc-web
-```
+![image](https://github.com/user-attachments/assets/abaa30b2-e93d-4b87-9479-210cd6fe4a5a)
+
 Access you application on the port 32123
+![image](https://github.com/user-attachments/assets/964d4e6a-4a13-43bd-a620-9115d58d935b)
+
 
 ### Task 4: Canary Deployment in Kubernetes 
 
