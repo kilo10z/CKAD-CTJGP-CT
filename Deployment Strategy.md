@@ -104,34 +104,25 @@ kubectl apply -f dep.yaml
 ```
 kubectl get deployments.apps,pod,rs
 ```
+![image](https://github.com/user-attachments/assets/9435e108-84c1-4ff9-bb0d-c943a050eee9)
+
 Note the Statgey and events by describing the deployment
 ```
 kubectl describe deployments.apps dep1
 ```
-To increase/decrease the number of replicas manually, either edit the yaml file, or edit the running deployment or execute the below command
-```
-kubectl scale deployment dep1 --replicas 5
-```
-For Autoscaling
-```
-kubectl get hpa
-```
-```
-kubectl autoscale deployment dep1 --min 4 --max 12 --cpu-percent 70 --name hpa-dep1
-```
-```
-kubectl get hpa
-```
-To upgrade/migrate the version of image, either edit the yaml file, or edit the deployment or execute the below command
 Add a watch on the pods in a new tab
 ```
 kubectl get po -w
 ```
+![image](https://github.com/user-attachments/assets/f0a882bb-ec41-4e1e-ab7a-485502e2b062)
+
 Set a new image for the deployment
 ```
 kubectl set image deploy dep1 nginx=nginx:latest --record
 ```
 Check how the pods are getting deleted and recreated. 
+
+![image](https://github.com/user-attachments/assets/ca240c77-2b1e-44c8-acdc-d7a947f397f7)
 
 Cross check if the image has been updated by executing the below command
 ```
@@ -141,6 +132,8 @@ To check the rollout history. The below command shows history of 10 versions.
 ```
 kubectl rollout history deploy dep1
 ```
+![image](https://github.com/user-attachments/assets/7fcb6525-e111-4b87-8bcd-401de335016e)
+
 To Rollback
 ```
 kubectl rollout undo deploy dep1 --to-revision 1
@@ -149,6 +142,7 @@ To check the history of a particular revision
 ```
 kubectl rollout history deploy dep1 --revision=<revision-number>
 ```
+![image](https://github.com/user-attachments/assets/88e8c221-53a5-47a2-8828-672c2c2de5ee)
 
 
 
