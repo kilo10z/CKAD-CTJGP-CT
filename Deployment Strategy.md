@@ -212,6 +212,7 @@ kubectl get svc,ep
 ![image](https://github.com/user-attachments/assets/b3dd924e-7d2c-451b-9085-e084717e305b)
 
 Access you application
+
 ![image](https://github.com/user-attachments/assets/f85d13a8-788f-4454-8b29-4e61a9ab9225)
 
 Create another deployment (Green)
