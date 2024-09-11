@@ -260,7 +260,9 @@ kubectl replace -f svc-web.yaml --force
 ```
 ![image](https://github.com/user-attachments/assets/abaa30b2-e93d-4b87-9479-210cd6fe4a5a)
 
+
 Access you application on the port 32123
+
 ![image](https://github.com/user-attachments/assets/964d4e6a-4a13-43bd-a620-9115d58d935b)
 
 
