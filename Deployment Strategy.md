@@ -53,9 +53,9 @@ Cross check if the image has been updated by executing the below command
 ```
 kubectl describe deployments.apps dep2
 ```
-Now lets rollback
+Now lets rollback. In the below command  if no revison number is given, it rollbacks to the immediate previous one.
 ```
-kubectl rollout undo deployment dep2
+kubectl rollout undo deployment dep2 --to-revision 1           
 ```
 Check the history
 ```
