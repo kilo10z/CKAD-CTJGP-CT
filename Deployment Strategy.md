@@ -269,25 +269,35 @@ Access you application on the port 32123
 ### Task 4: Canary Deployment in Kubernetes 
 
 Service and deployment should have a common label.
-Replace labels and selectors with `type: web-app` in the yaml file of service and both the deployments and apply again.
+Replace labels and selectors with `type: web-app` in the yaml file of service and both the deployments and replace all
 
-Use `replace` , as apply command might throw an error.
 ```
-kubectl replace -f web-green.yaml
+kubectl replace -f web-green.yaml --force
 ```
 ```
-kubectl replace -f web-blue.yaml
+kubectl replace -f web-blue.yaml --force
 ```
-In the yaml file of Service change the Selector to 'type: web-app` and replace.
+```
+kubectl replace -f svc-web.yaml --force
+```
 
-Check the endpoints of the service. It should show all the pods of both the deployments.
+Check all obejcts
 ```
-kubectl get ep svc svc-web
+kubectl get po,svc,ep
 ```
+![image](https://github.com/user-attachments/assets/146ed1d4-04c0-4cfc-8ca4-eaa56c123369)
+
+Describe the endpoint. You would notice all 6 pods Ip added to the end-point
 ```
-kubectl get po -o wide
+kubectl describe ep svc-web
 ```
-Access the application on port 32123. Sometime it will show Blue, other time it will show green.
+![image](https://github.com/user-attachments/assets/076f31be-99ac-4657-a515-2901c3cbfc6a)
+
+Access the application on port 32123. Refresh the page a few times. Sometime it will show Blue, other time it will show green. 
+![image](https://github.com/user-attachments/assets/680d2a0d-7bb6-4db1-b8b3-a4b465000f0e)
+![image](https://github.com/user-attachments/assets/ac164c9b-3f83-47f1-9342-68126db7149a)
+
+
 
 
 
