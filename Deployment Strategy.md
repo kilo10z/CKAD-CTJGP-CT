@@ -45,7 +45,7 @@ Check how the pods are getting deleted and recreated.
 
 Check the rollout history
 ```
-kubectl rollout history depoyment dep2
+kubectl rollout history deployment dep2
 ```
 ![image](https://github.com/user-attachments/assets/3c430837-2857-405b-b50d-c6435caeb5ae)
 
