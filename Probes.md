@@ -110,7 +110,7 @@ kubectl get ep svc readiness-svc
 ```
 Login inside pod and delete the file 
 ```
-kubectl exec -it readiness-pod bash 
+kubectl exec -it readiness-pod -- bash 
 ```
 ```
 rm -f /readiness
