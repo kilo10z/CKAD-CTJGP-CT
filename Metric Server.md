@@ -1,5 +1,11 @@
 ## Metrics Server
+The Metrics Server in Kubernetes is a lightweight component(minimal, resource-efficient service designed) to perform a specific task—gathering real-time resource usage data—without consuming much computational power or memory itself from nodes and pods. It enables features like Horizontal Pod Autoscaling (HPA) and the kubectl top command, which shows current resource consumption. Once installed, you can see it running as a pod in the kube-system namespace.
 
+* Main Purpose: Provides real-time resource metrics for autoscaling and monitoring.
+* Usage: Supports kubectl top and enables HPA based on CPU/memory usage.
+* Limitations: It doesn't store historical data; use Prometheus for detailed monitoring.
+
+  
 Install Metrics Server 
 
 ```
@@ -44,6 +50,5 @@ To check all the options
 ```
 kubectl top pod --help
 ```
-
 
 
