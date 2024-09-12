@@ -18,7 +18,10 @@
 * [Lab-3: Jobs and Cronjobs](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Jobs%20and%20Cronjobs.md)
 * [Lab-4: Multi Containers](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Multi-containers.md)
 * [Lab-5: Pod Scaling](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Pod%20Scaling.md)
-* [Lab-6: Deployment Strategy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Deployment%20Strategy.md)
+* [Lab-6: Metrics Server](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Metric%20Server.md)
+* [Lab-7: Deployment Strategy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Deployment%20Strategy.md)
+* [Lab-8: Probes](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Probes.md)
+* [Lab-9: ConafigMaps and Secrets](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/ConfigMaps%20and%20Secrets.md)
 
 * [References](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/References.md)
 
