@@ -69,14 +69,25 @@ kubectl apply -f rq2.yaml
 ```
 kubectl describe ns ns1
 ```
+![image](https://github.com/user-attachments/assets/32287061-4b45-4457-b1cd-879ad57078e5)
 
 ```
 kubectl get quota -n ns1
 ```
+![image](https://github.com/user-attachments/assets/ed11fb6f-f853-40cd-8b53-722dce8ea637)
+
 Try deploying a new pod in namespace ns1
 ```
 kubectl -n ns1 run pod3 --image nginx --port 80
 ```
+![image](https://github.com/user-attachments/assets/fe9ea4d5-2948-4f22-bf6c-4db894316e93)
+
+Try creating a new service by exposing the existing pod.
+```
+kubectl -n ns1 expose pod pod2 --name pod21-svc --port 80 --type NodePort
+```
+![image](https://github.com/user-attachments/assets/1a8cf986-bb1f-4708-aa50-268b2710d4d9)
+
 
 ### Task 3: Creating Resource Quota and Constraining Hardware Resources
 
