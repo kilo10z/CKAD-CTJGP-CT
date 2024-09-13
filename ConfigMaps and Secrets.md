@@ -289,6 +289,7 @@ cd /app && cat token
 ```
 exit
 ```
+Now we will update the token and recreate our config map
 ```
 vi token
 ```
