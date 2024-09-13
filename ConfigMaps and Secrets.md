@@ -328,6 +328,19 @@ kubectl get secret
 ```
 kubectl describe secret secret-1
 ```
+![image](https://github.com/user-attachments/assets/f269ba09-a831-442e-a42f-b65612c6afbb)
+View the encrypted value using the get command
+```
+kubectl get secrets secret-1 -o yaml
+```
+![image](https://github.com/user-attachments/assets/037b5e97-88ba-4497-bf31-f1baeec19f64)
+Decrypt and reconfirm the values.
+```
+echo "MTIz" | base64 -d
+```
+![image](https://github.com/user-attachments/assets/840825c6-3587-4e43-a656-76fab7c45258)
+
+
 Declarative
 ```
 vi secret.yaml
@@ -412,6 +425,8 @@ echo $user
 ```
 echo $password
 ```
+![image](https://github.com/user-attachments/assets/7aefedcc-8437-41d5-bc44-b57a27e37099)
 ```
-env 
+exit
 ```
+
