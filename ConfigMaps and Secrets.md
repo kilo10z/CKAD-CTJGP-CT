@@ -278,11 +278,38 @@ Enter the pod and check if the variable has been passed correctly or not
 kubectl exec -it web-pod -- sh
 ```
 ```
-cd /app
+env | grep token
+```
+![image](https://github.com/user-attachments/assets/dba3bfd1-48d6-468a-aabe-701ab131a0f7)
+```
+exit
 ```
 ```
-cat token
+vi token
 ```
+Add the below sentence at the end of the existing one.
+```
+Now I have updated my configmap.
+```
+```
+kubectl delete cm cm-1
+```
+```
+kubectl create cm cm-1 --from-file=token
+```
+```
+kubectl get cm cm-1 -o yaml
+```
+![image](https://github.com/user-attachments/assets/8cc6d666-bcbe-4d1e-929b-b1aca0167870)
+Exec into the pod and check out the variable now
+```
+kubectl exec -it web-pod -- sh
+```
+```
+cd /app && cat token
+```
+![image](https://github.com/user-attachments/assets/a6af534d-c305-4f8e-bac8-d37740fde5c2)
+
 
 ### Task 6 : Secret
 Imperative
