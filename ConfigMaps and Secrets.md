@@ -22,6 +22,8 @@ kubectl exec -it pod-imperative -- bash
 ```
 echo $db_user
 ```
+![image](https://github.com/user-attachments/assets/90ede114-e875-4b49-9d0b-266fc95a8e88)
+
 ```
 exit
 ```
@@ -69,6 +71,11 @@ echo $db_pwd
 ```
 env | grep db_
 ```
+![image](https://github.com/user-attachments/assets/2213796f-194e-4849-bbce-1cec5fe1572f)
+```
+exit
+```
+
 
 ### Task 2: Inject `ALL` variables from ConfigMaps(FromLiteral) into POD.
 Create a ConfigMap
