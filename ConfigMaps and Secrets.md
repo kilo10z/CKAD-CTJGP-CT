@@ -183,9 +183,9 @@ vi token
 ```
 This is CKAD Training. We are practicing Injecting variables from ConfigMaps(FromFile) into POD.
 ```
-Create a ConfigMap
+Create a ConfigMap. `--from-file=<filen-name>. This file name acts as the key`
 ```
-kubectl create cm cm-1 --from-file=token         #--from-file=<filen-name>. This file name acts as the key
+kubectl create cm cm-1 --from-file=token         
 ```
 ```
 kubectl get cm
