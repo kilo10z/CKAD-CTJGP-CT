@@ -278,7 +278,7 @@ Enter the pod and check if the variable has been passed correctly or not
 kubectl exec -it web-pod -- sh
 ```
 ```
-env | grep token
+cd /app && cat token
 ```
 ![image](https://github.com/user-attachments/assets/dba3bfd1-48d6-468a-aabe-701ab131a0f7)
 ```
