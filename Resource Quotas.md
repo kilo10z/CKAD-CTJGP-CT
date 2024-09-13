@@ -14,6 +14,7 @@ kubectl get ns
 ```
 kubectl describe ns ns1
 ```
+![image](https://github.com/user-attachments/assets/1b803628-ebdf-4ec0-afe1-b8134c97c005)
 
 
 ### Task 2: Creating Resource Quota and Constraining Object Creation
@@ -38,10 +39,14 @@ kubectl -n ns1 create quota rs-quota1 --hard=pods=3,services=1
 ```
 kubectl describe ns ns1
 ```
+![image](https://github.com/user-attachments/assets/a950f00d-57aa-4542-b9f5-6c257967435d)
+
 ```
 kubectl get quota -n ns1
 ```
-Declarative
+![image](https://github.com/user-attachments/assets/21503318-e6b6-4b13-ad48-a0663f081b9a)
+
+Declarative : We will create another resource quota in the same namespace through this method.
 ```
 vi rq2.yaml
 ```
@@ -64,6 +69,7 @@ kubectl apply -f rq2.yaml
 ```
 kubectl describe ns ns1
 ```
+
 ```
 kubectl get quota -n ns1
 ```
