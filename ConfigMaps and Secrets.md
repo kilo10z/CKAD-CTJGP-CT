@@ -227,7 +227,7 @@ exit
 ```
 
 ### Task 5 : Injecting ConfigMap as volume mount
-ConfigMaps consumed as environment variables are not updated automatically and require a pod restart. When a ConfigMap currently consumed in a volume is updated, projected keys are eventually updated as well. The kubelet checks whether the mounted ConfigMap is fresh on every periodic sync. 
+ConfigMaps consumed as environment variables are not updated automatically and require a pod restart. The challenge is resolved using volume mounts. When a ConfigMap currently consumed in a volume is updated, projected keys are eventually updated as well. The kubelet checks whether the mounted ConfigMap is fresh on every periodic sync. 
 
 Create a file
 ```
