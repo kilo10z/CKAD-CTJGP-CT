@@ -188,10 +188,7 @@ Create a ConfigMap. `--from-file=<filen-name>. This file name acts as the key`
 kubectl create cm cm-1 --from-file=token         
 ```
 ```
-kubectl get cm
-```
-```
-kubectl describe cm cm-1
+kubectl get cm cm-1 -o yaml
 ```
 Inject particular variable from the ConfigMap into the Pod Yaml File
 ```
@@ -217,15 +214,9 @@ spec:
 ```
 kubectl apply -f env.yaml
 ```
-```
-kubectl describe pod web-pod
-```
 Enter the pod and check if the variable has been passed correctly or not
 ```
 kubectl exec -it web-pod -- sh
-```
-```
-echo $token
 ```
 ```
 env | grep token
