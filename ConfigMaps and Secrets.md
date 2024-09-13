@@ -1,6 +1,33 @@
 ## ConfigMap & Secrets
+ConfigMap and Secrets are resources used to manage configuration data and sensitive information, respectively. Here’s a concise breakdown of each:
+
+ConfigMap
+*  Purpose: Stores non-sensitive configuration data such as application settings, environment variables, and configuration files.
+* Usage: Allows you to decouple configuration artifacts from container images, making your applications more portable and easier to manage.
+
+Secrets
+* Purpose: Stores sensitive data such as passwords, OAuth tokens, and SSH keys.
+* Usage: Ensures that sensitive data is stored securely and can be accessed by Pods without hardcoding the information into images or configuration files.
+* Data in Secrets is base64 encoded for storage but not encrypted by default.
 
 ### Task 1: Directly inject variables - Traditional Method
+#### Imperative Method
+```
+kubectl run pod-imperative --image nginx --env "db_user=admin"
+```
+Exec into the pod and check the environment variable
+```
+kubectl exec -it pod-imperative -- bash
+```
+```
+echo $db_user
+```
+```
+exit
+```
+
+#### Declartive Method
+Create a YAML file to pass the environment variables
 ```
 vi env.yaml
 ```
