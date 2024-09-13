@@ -221,6 +221,10 @@ kubectl exec -it web-pod -- sh
 ```
 env | grep token
 ```
+![image](https://github.com/user-attachments/assets/61cd4546-3632-4430-b453-479d5d95b3e3)
+```
+exit
+```
 
 ### Task 5 : Injecting ConfigMap as volume mount
 
