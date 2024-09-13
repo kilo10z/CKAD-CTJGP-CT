@@ -83,11 +83,10 @@ Create a ConfigMap
 kubectl create cm cm-1 --from-literal=db_user=admin --from-literal=db_pwd=1234
 ```
 ```
-kubectl get cm
+kubectl get cm cm-1 -o yaml
 ```
-```
-kubectl describe cm cm-1
-```
+![image](https://github.com/user-attachments/assets/b3bb49d0-f52f-45bc-85fc-a10f13e17a05)
+
 Inject the ConfigMap into the Pod Yaml File
 ```
 vi env.yaml
@@ -112,22 +111,18 @@ spec:
 ```
 kubectl apply -f env.yaml
 ```
-```
-kubectl describe pod web-pod
-```
 Enter the pod and check if the variable has been passed correctly or not
 ```
 kubectl exec -it web-pod -- sh
 ```
 ```
-echo $db_user
-```
-```
-echo $db_pwd
-```
-```
 env | grep db_
 ```
+![image](https://github.com/user-attachments/assets/3cc392c1-cc56-489c-8df4-f14f4bfa36ae)
+```
+exit
+```
+
 
 ### Task 3: Inject `PARTICULAR` variables from ConfigMaps(FromLiteral) into POD.
 Create a ConfigMap
@@ -135,10 +130,7 @@ Create a ConfigMap
 kubectl create cm cm-1 --from-literal=db_user=admin --from-literal=db_pwd=1234
 ```
 ```
-kubectl get cm
-```
-```
-kubectl describe cm cm-1
+kubectl get cm cm-1 -o yaml
 ```
 Inject particular variable from the ConfigMap into the Pod Yaml File
 ```
@@ -175,17 +167,14 @@ Enter the pod and check if the variable has been passed correctly or not
 kubectl exec -it web-pod -- sh
 ```
 ```
-echo $db_user
-```
-```
-echo $db_pwd
-```
-```
-echo $db_password
-```
-```
 env | grep db_
 ```
+![image](https://github.com/user-attachments/assets/3ffc264e-9703-4b9c-befb-edb0bead4e1c)
+```
+exit
+```
+
+
 ### Task 4: Inject variables from ConfigMaps(FromFile) into POD.
 Create a file
 ```
