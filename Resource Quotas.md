@@ -114,11 +114,12 @@ kubectl apply -f rq3.yaml
 ```
 kubectl describe ns ns1
 ```
-
-### Task 4: Verify Resource Quota Functionality
+Try and create a pod in the namespace. 
 ```
 kubectl -n ns1 run pod4 --image nginx --port 80
 ```
+![image](https://github.com/user-attachments/assets/a0f2eb55-7a3b-43a5-a5ad-ec1b82adb994)
+
 ```
 vi rq4.yaml
 ```
@@ -178,3 +179,4 @@ spec:
 ```
 kubectl apply -f rq5.yaml
 ```
+![image](https://github.com/user-attachments/assets/b0a0415d-cd3c-4a37-a4b9-916dbc994dcf)
