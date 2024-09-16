@@ -77,7 +77,7 @@ exit
 ```
 Create a network policy which uses labels to deny all ingress traffic
 ```
-vi np-deny-all.yml
+vi ingress-policy.yml
 ```
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -92,7 +92,7 @@ spec:
     
 ```
 ```
-kubectl apply -f np-deny-all.yml
+kubectl apply -f ingress-policy.yml
 ```
 ```
 kubectl get networkpolicies
@@ -113,7 +113,7 @@ exit
 Modify the network policy to allow traffic with matching Pod labels 
 Inspect the network policy and notice the selectors
 ```
-vi np-pod-label-allow.yml
+vi ingress-policy.yml
 ```
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -133,10 +133,7 @@ spec:
 ```
 Before applying this yaml describe networkpolicies to check rule
 ```
-kubectl describe networkpolicies backend-policy
-```
-```
-kubectl apply -f np-pod-label-allow.yml
+kubectl replace -f ingress-policy.yml --force
 ```
 ```
 kubectl describe networkpolicies backend-policy
