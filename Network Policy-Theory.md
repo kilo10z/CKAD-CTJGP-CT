@@ -78,3 +78,33 @@ spec:
   - {}
 ```
 Effect: All outgoing traffic is allowed from the selected pods.
+
+#### Policy Types Field (Non-Mandatory)
+The policyTypes field in a Kubernetes Network Policy specifies the types of traffic (ingress, egress, or both) that the policy applies to. While this field is non-mandatory, it plays a crucial role in determining which traffic rules are enforced.
+
+##### Ingress Policy Type:
+Effect: Only the ingress rules defined under the ingress field will be applied. By default, if no policyTypes field is specified, all incoming traffic is allowed unless explicitly restricted by ingress rules.
+```
+policyTypes:
+- Ingress
+```
+
+##### Egress Policy Type:
+Effect: Only the egress rules defined under the egress field will be applied. By default, if no policyTypes field is specified, all outgoing traffic is allowed unless explicitly restricted by egress rules.
+```
+policyTypes:
+- Egress
+```
+
+##### Combined Ingress and Egress Policy Type:
+Effect: Both ingress and egress rules defined in the policy will be enforced.
+```
+policyTypes:
+- Ingress
+- Egress
+```
+
+##### Important Note:
+Without policyTypes: If policyTypes is omitted, egress rules are applied, but they will affect both ingress and egress traffic. This means that without explicitly specifying policyTypes, egress policies will inadvertently impact incoming traffic as well.
+
+With policyTypes explicitly defined: The policy will apply only to the specified traffic types (Ingress, Egress, or both). For example, if Egress is specified, only egress rules will be applied, and ingress traffic will not be affected by this policy.
