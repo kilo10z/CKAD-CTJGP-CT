@@ -157,7 +157,7 @@ kubectl run --rm -it --image=busybox net-policy
 ```
 ```
 wget -qO- -T3 http://backend
-```'
+```
 ![image](https://github.com/user-attachments/assets/b8adaa3d-45cf-44d7-b042-7adfbab0e884)
 
 ```
