@@ -6,6 +6,7 @@ A Kubernetes Network Policy is used to control network traffic to and from Kuber
 * Ingress: Controls incoming traffic to the pods.
 * Egress: Controls outgoing traffic from the pods.
 * Default Behavior: All traffic (ingress and egress) is allowed by default unless a policy explicitly restricts it.
+* `You can define deny-all policies by setting ingress: [] or egress: [] and allow-all policies by using ingress: - {} or egress: - {}.`
 
 
 ### Policy Types in Kubernetes:
