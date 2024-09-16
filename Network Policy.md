@@ -104,6 +104,8 @@ kubectl run --rm -it --image=busybox net-policy
 wget -qO- -T3 http://backend
 ```
 It will show timeout
+![image](https://github.com/user-attachments/assets/e6b5610f-e194-42ca-812d-15d6af420018)
+
 ```
 exit
 ```
