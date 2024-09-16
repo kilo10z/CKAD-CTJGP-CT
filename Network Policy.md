@@ -88,7 +88,8 @@ spec:
   podSelector:
     matchLabels:
       role: backend
-  ingress: {}
+  ingress:
+    - {}
 ```
 ```
 kubectl apply -f np-deny-all.yml
