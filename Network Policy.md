@@ -178,6 +178,8 @@ curl https://8.8.8.8
 ```
 curl https://yahoo.com
 ```
+![image](https://github.com/user-attachments/assets/160cd45c-70a1-4322-9f1e-1e4d85a5cf47)
+
 ```
 exit
 ```
@@ -223,22 +225,6 @@ It can access the IP as it is enabled by the Egress Policy
 curl https://yahoo.com
 ```
 It is not able to access other than mentioned in the EgressPolicy
+![image](https://github.com/user-attachments/assets/83c26cf8-90c8-42b8-8fa6-8fde30602804)
 
-Deploy a new pod within the namespace where the network policy is applied.
-```
-kubectl run pod2 --image nginx
-```
-Exec into the pod
-```
-kubectl exec -it pod2 -- /bin/sh
-```
-```
-curl https://8.8.8.8
-```
-Verify that connections to allowed destinations are successful.
 
-Attempt to access destinations that are not allowed by the egress policy:
-```
-curl https://yahoo.com
-```
-Verify that connections to disallowed destinations are blocked or result in errors.
