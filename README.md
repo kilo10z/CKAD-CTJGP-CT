@@ -22,6 +22,8 @@
 * [Lab-7: Deployment Strategy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Deployment%20Strategy.md)
 * [Lab-8: Probes](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Probes.md)
 * [Lab-9: ConafigMaps and Secrets](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/ConfigMaps%20and%20Secrets.md)
+* [Lab 10 - Resource Quota](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Resource%20Quotas.md)
+* [Lab 11 - Network Policy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Network%20Policy.md)
 
 * [References](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/References.md)
 
