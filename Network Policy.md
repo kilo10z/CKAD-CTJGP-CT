@@ -27,6 +27,8 @@ apt update && apt install iputils-ping
 ```
 ping -c 3 <Ip Address of second pod>
 ```
+![image](https://github.com/user-attachments/assets/6b9510b8-174a-4aed-b948-5ea6ad9500ff)
+
 ```
 exit
 ```
@@ -41,6 +43,8 @@ apt update && apt install iputils-ping
 ```
 ping -c 3 <Ip Address of first pod>
 ```
+![image](https://github.com/user-attachments/assets/4418c9bc-0c80-4f0c-bd17-ddf7be86971d)
+
 ```
 exit
 ```
