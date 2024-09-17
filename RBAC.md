@@ -39,6 +39,8 @@ Describe the Rold and role binding
 ```
 kubectl -n ns1 describe role,rolebindings.rbac.authorization.k8s.io 
 ```
+![image](https://github.com/user-attachments/assets/267389b3-9855-4f1d-8afd-bc87cc3fc862)
+
 
 #### Test whether you are able to do a GET request to Kubernetes API 
 ```
