@@ -25,7 +25,7 @@
 * [Lab 10 - Resource Quota](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Resource%20Quotas.md)
 * [Lab 11 - Network Policy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Network%20Policy.md)
 * [Lab 12 - RBAC](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/README.md)
-* (https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Security%20Context.md)
+
 
 * [References](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/References.md)
 
