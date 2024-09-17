@@ -24,7 +24,7 @@
 * [Lab-9: ConafigMaps and Secrets](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/ConfigMaps%20and%20Secrets.md)
 * [Lab 10 - Resource Quota](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Resource%20Quotas.md)
 * [Lab 11 - Network Policy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Network%20Policy.md)
-* [Lab 12 - RBAC](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/README.md)
+* [Lab 12 - RBAC](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/RBAC.md)
 
 
 * [References](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/References.md)
