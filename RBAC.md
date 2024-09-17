@@ -56,6 +56,9 @@ cd /var/run/secrets/kubernetes.io/serviceaccount/ && ls
 ![image](https://github.com/user-attachments/assets/9be80078-ed20-4a70-a055-54ec1957db28)
 
 ```
+cat namespace
+```
+```
 cat ca.crt
 ```
 ```
