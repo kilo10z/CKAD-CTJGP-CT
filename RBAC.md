@@ -53,9 +53,8 @@ Check the details of the Service Account assosciated with the pod
 ```
 cd /var/run/secrets/kubernetes.io/serviceaccount/ && ls
 ```
-```
-ls
-```
+![image](https://github.com/user-attachments/assets/9be80078-ed20-4a70-a055-54ec1957db28)
+
 ```
 cat ca.crt
 ```
