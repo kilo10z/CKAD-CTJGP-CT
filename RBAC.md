@@ -206,6 +206,11 @@ You should be able to see a new pod has been created with name my-pod
 ```
 exit
 ```
+The same is verified from the control plane as well
+```
+kubectl get po -n ns1
+```
+
 ![image](https://github.com/user-attachments/assets/a5ba1241-d2d5-4013-8feb-18fe9762e7f3)
 
 ### Task 2: Cluster Role and Cluster Role Binding
