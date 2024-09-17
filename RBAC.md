@@ -94,17 +94,27 @@ spec:
 kubectl apply -f pod-sa.yaml
 ```
 ```
+kubectl get po -n ns1
+```
+You should be able to see 2 pos in the namespace
+![image](https://github.com/user-attachments/assets/b00a8b29-12c8-4336-a692-592b850b294b)
+
+```
 kubectl exec -it -n ns1 pod2 -- /bin/bash 
 ```
 ```
 curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/ns1/pods | grep '"name": "pod'
 ```
-You should be able to see the details of all the pods
+You should be able to see the details of the same 2 pos that are currently running in the ns1 namespace
+![image](https://github.com/user-attachments/assets/a72bc4ca-f751-446d-a2c0-4c1dafdf3b43)
+
 
 Access to Pods in deafult namespace is forbidden
 ```
-curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /ar/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/default/pods
+curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/default/pods
 ```
+![image](https://github.com/user-attachments/assets/fb0c6962-fa6d-4de6-8ff7-1eb9c702aceb)
+
 
 #### Test whether you are able to do a POST request to Kubernetes API (create a new pod)
 
@@ -136,6 +146,8 @@ curl -v \
 
 ```
 You would get Forbidden Error.
+![image](https://github.com/user-attachments/assets/ec506401-e7f6-453e-92c0-1a625d1e6f6e)
+
 ```
 exit
 ```
@@ -149,6 +161,8 @@ Add the below permissions
  - create
  - update
 ```
+![image](https://github.com/user-attachments/assets/ca975b7c-3b23-48c1-91f5-d000772c5c10)
+
 Replace the role
 ```
 kubectl replace -f role.yaml --force
@@ -183,11 +197,15 @@ curl -v \
 ```
 Retrieve the Pod details
 ```
-curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/ns1/pods | grep '"name":'
+curl --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/ns1/pods | grep '"name":'
 ```
+You should be able to see a new pod has been created with name my-pod
+![image](https://github.com/user-attachments/assets/430b63c0-f8fc-4abc-9316-ce42d98faf38)
+
 ```
 exit
 ```
+![image](https://github.com/user-attachments/assets/a5ba1241-d2d5-4013-8feb-18fe9762e7f3)
 
 ### Task 2: Cluster Role and Cluster Role Binding
 
