@@ -97,6 +97,7 @@ kubectl apply -f pod-sa.yaml
 kubectl get po -n ns1
 ```
 You should be able to see 2 pos in the namespace
+
 ![image](https://github.com/user-attachments/assets/b00a8b29-12c8-4336-a692-592b850b294b)
 
 ```
