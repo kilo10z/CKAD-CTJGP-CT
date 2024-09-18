@@ -6,6 +6,8 @@ To check the version of Helm installed
 ```
 helm version
 ```
+![image](https://github.com/user-attachments/assets/5046f1d4-9852-4bd3-ad7a-29657fe898c9)
+
 
 To add a Helm chart repository to your local environment. Below we are adding two Helm Chart Repositories.
 ```
@@ -18,6 +20,8 @@ To list the Helm chart repositories configured in your local environment.
 ```
 helm repo list
 ```
+![Uploading image.png…]()
+
 To search for Helm charts related to WordPress in the configured Helm repositories
 ```
 helm search repo wordpress
