@@ -1,7 +1,14 @@
 ## Helm
 
-### Task 1:  Commonly used Helm Commands
+### Commonly used Helm Commands
 
+Download the shell script for the installation of the Helm package manager and run it.
+```
+wget  https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/kubernetes-essentials/helm.sh
+```
+```
+bash helm.sh
+```
 To check the version of Helm installed
 ```
 helm version
@@ -67,73 +74,31 @@ Notice the revision number
 ![image](https://github.com/user-attachments/assets/cdfad5e3-7732-4516-bd04-0fac913e48ec)
 
 
-To download the Bitnami WordPress Helm chart to your local machine.
+If you want to edit the existing hearts, download and exract the chart. To download the Bitnami WordPress Helm chart to your local machine.
 ```
 helm fetch bitnami/wordpress
 ```
+![image](https://github.com/user-attachments/assets/007331d8-84ee-4eab-99f0-c2b4c5ecbf9c)
+```
+tar -xvzf wordpress-23.1.14.tgz
+```
+![image](https://github.com/user-attachments/assets/d6af6ab5-1c6c-43e2-b7aa-f8a4ba9879c7)
+
+
 To remove a Helm repository from your local Helm client configuration
 ```
 helm repo remove stable-charts
 ```
-```
-helm repo remove bitnami
-```
+![image](https://github.com/user-attachments/assets/5df841f2-e31a-48bf-9103-64601a295288)
+
 To remove Helm package manager
 ```
 sudo apt-get remove helm
 ```
 
-### Task 2:  Installing WordPress with Helm
+### Wordpress 
+In the above steps we have already installed wordpress
 
-#### Helm setup
-
-Download the shell script for the installation of the Helm package manager and run it.
-```
-wget  https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/kubernetes-essentials/helm.sh
-```
-```
-bash helm.sh
-```
-```
-helm version
-```
-
-#### Setup WordPress
-#Add bitnami repository to helm which contains WordPress chart.
-```
-helm repo add bitnami https://charts.bitnami.com/bitnami
-```
-```
-helm repo update
-```
-```
-helm repo list
-```
-
-Search for WordPress package from the repository and install the WordPress chart with release name wordpress-chart. You can name it as you want.
-```
-helm search repo Wordpress
-```
-Helm Charts can be directly installed from the repo, or the yaml file downloaded, extracted and then chart installed
-```
-helm install wordpress-chart bitnami/wordpress
-```
-OR Perform helm fetch to get the WordPress compressed file to the working directory. Perform ls and verify that a compressed WordPress file is present in PWD.
-```
-helm fetch bitnami/wordpress
-```
-```
-ls
-``` 
-Extract the compressed file using the below command.
-```
-tar -xvzf wordpress-19.2.6.tgz
-```
-Now, deploy the WordPress using helm install command.  This will set up the pods and services for WordPress.
-```
-helm install wordpress --generate-name   ## OR helm install wordpress wordpress
-``` 
-#### Verify that WordPress has been set up 
 Verify that the pods are running.
 ```
 kubectl get pods
@@ -151,23 +116,30 @@ kubectl get deploy
 ```
 View the services using the below commands. Make note of the EXTERNAL IP of the LoadBalancer service.
 ```
-kubectl get svc
+kubectl get all
 ```
+![image](https://github.com/user-attachments/assets/ab1422ae-22e8-466f-a3f7-e0442afa694f)
+
+If your load balancer is pending, edit it to NodePort
+
 ```
-kubectl get svc --namespace default -w wordpress-1637763307
-``` 
+kubectl edit svc wordpress
+```
+![image](https://github.com/user-attachments/assets/0013d353-1dfc-434e-b1a2-ecf0695b1c26)
+
 Open the browser and paste the service endpoint noted on the previous step. Observe that the WordPress site is up and running.
 
-#### Cleanup
-List the current helm release and delete it
+Add `/admin` at the end of the URL to be directed to the login page
+
+Execute the below commands to get the user id and password. USe the same to log in to the Wordpress application that you have just deployed
 ```
-helm ls
-```
-```
-helm delete <helm_Release_Name >
+echo Username: user
 ```
 ```
-helm ls
+echo Password: $(kubectl get secret --namespace default wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d)
 ```
+![image](https://github.com/user-attachments/assets/4bbcd347-3726-434a-95aa-6b1343b6cc22)
+
+
  
  
