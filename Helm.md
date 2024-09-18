@@ -20,7 +20,8 @@ To list the Helm chart repositories configured in your local environment.
 ```
 helm repo list
 ```
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/ef243759-863c-4977-9bb3-0eea3da0b665)
+
 
 To search for Helm charts related to WordPress in the configured Helm repositories
 ```
