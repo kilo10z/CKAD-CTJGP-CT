@@ -273,9 +273,12 @@ Describe the Cluster Role and Cluster role binding
 ```
 kubectl describe clusterrole pod-reader 
 ```
+![image](https://github.com/user-attachments/assets/6b11242e-09b7-4c2c-9d2d-d4a4b6d6cd0e)
+
 ```
 kubectl describe clusterrolebindings.rbac.authorization.k8s.io my-user-binding
 ```
+![image](https://github.com/user-attachments/assets/7c8c5379-5299-41f1-a2e5-040436943c17)
 
 #### Test whether you are able to do a GET request to Kubernetes API 
 ```
@@ -294,6 +297,8 @@ Make an API call to list all the pods in the Namespace default
 ```
 curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/default/pods | grep '"name": "pod'
 ```
+![image](https://github.com/user-attachments/assets/3df9ea19-0fea-47d1-8752-41ea7aa32867)
+
 ```
 exit
 ```
@@ -315,6 +320,10 @@ spec:
 ```
 kubectl apply -f pod-sa2.yaml
 ```
+Currently we have 3 total pods running  in default and ns1 namespace.
+![image](https://github.com/user-attachments/assets/47a97aee-6503-4044-8ea3-cce029339316)
+
+Lets do an API call from inside the pod.
 ```
 kubectl exec -it -n ns1 pod4 -- /bin/bash 
 ```
@@ -323,11 +332,12 @@ Make an API call to list all the pods in the Namespace ns1
 curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/ns1/pods | grep '"name": "pod'
 ```
 The API call is successful
-
+![image](https://github.com/user-attachments/assets/cfebd049-213c-4937-9846-3e09352160c0)
 Make an API call to list all the pods in the Namespace default
 ```
 curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default/api/v1/namespaces/default/pods | grep '"name": "pod'
 ```
+![image](https://github.com/user-attachments/assets/d86c2a9f-8de5-4b04-8563-4d8bbbfd67b2)
 ```
 exit
 ```
