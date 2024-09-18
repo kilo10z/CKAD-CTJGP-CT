@@ -43,6 +43,8 @@ helm list
 
 You can install multiple helm charts from the same repo, but with unique name
 ```
+helm install app-wordpress bitnami/wordpress
+```
 ![image](https://github.com/user-attachments/assets/4292aae2-bfc9-4327-97f9-70a7db03564a)
 
 ![image](https://github.com/user-attachments/assets/c018071f-d7c5-4fb6-8f03-0be1f024a9cb)
