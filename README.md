@@ -19,7 +19,7 @@
 * [Lab-4: Multi Containers](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Multi-containers.md)
 * [Lab-5: Deployment Strategy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Deployment%20Strategy.md)
 * [Lab-6: Probes](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Probes.md)
-* [Lab-7: ConafigMaps and Secrets](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/ConfigMaps%20and%20Secrets.md)
+* [Lab-7: ConfigMaps and Secrets](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/ConfigMaps%20and%20Secrets.md)
 * [Lab 8: Resource Quota](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Resource%20Quotas.md)
 * [Lab 9: Network Policy](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/Network%20Policy.md)
 * [Lab 10: RBAC](https://github.com/Mehar-Nafis/CKAD-Batch25/blob/main/RBAC.md)
