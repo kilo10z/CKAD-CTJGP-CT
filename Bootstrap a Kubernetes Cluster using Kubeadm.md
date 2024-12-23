@@ -162,6 +162,10 @@ EOF
 
 # Apply sysctl params without reboot
 sudo sysctl --system
+
+apt-get update
+apt-get install -y software-properties-common curl
+
 curl -fsSL https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/Release.key |
     gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
