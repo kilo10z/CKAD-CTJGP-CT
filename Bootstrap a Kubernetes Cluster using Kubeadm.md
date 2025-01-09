@@ -163,26 +163,31 @@ EOF
 # Apply sysctl params without reboot
 sudo sysctl --system
 
-apt-get update
-apt-get install -y software-properties-common curl
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
-curl -fsSL https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/Release.key |
-    gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+export OS_VERSION=xUbuntu_22.04
+export CRIO_VERSION=1.28
 
-echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/ /" |
-    tee /etc/apt/sources.list.d/kubernetes.list
+sudo curl -fsSL https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS_VERSION/Release.key | sudo gpg --dearmor -o /usr/share/keyrings/libcontainers-archive-keyring.gpg
 
-curl -fsSL https://pkgs.k8s.io/addons:/cri-o:/stable:/$CRIO_VERSION/deb/Release.key |
-    gpg --dearmor -o /etc/apt/keyrings/cri-o-apt-keyring.gpg
+sudo curl -fsSL https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$CRIO_VERSION/$OS_VERSION/Release.key | sudo gpg --dearmor -o /usr/share/keyrings/libcontainers-crio-archive-keyring.gpg
 
-echo "deb [signed-by=/etc/apt/keyrings/cri-o-apt-keyring.gpg] https://pkgs.k8s.io/addons:/cri-o:/stable:/$CRIO_VERSION/deb/ /" |
-    tee /etc/apt/sources.list.d/cri-o.list
+sudo echo "deb [signed-by=/usr/share/keyrings/libcontainers-archive-keyring.gpg] https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS_VERSION/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+
+sudo echo "deb [signed-by=/usr/share/keyrings/libcontainers-crio-archive-keyring.gpg] https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$CRIO_VERSION/$OS_VERSION/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$CRIO_VERSION.list
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 sudo apt-get update
-sudo apt-get install cri-o cri-o-runc -y
+
+sudo apt-get install -y cri-o cri-o-runc cri-tools
 
 sudo systemctl daemon-reload
-sudo systemctl enable crio --now
+sudo systemctl enable crio
+sudo systemctl start crio
 
 echo "CRI runtime installed susccessfully"
 
